@@ -58,6 +58,7 @@ function drop {
     fi
 }
 
+# reload ~/.bash_profile with a mere "."
 function . {
     if [ "" = "$1" ]
         then
