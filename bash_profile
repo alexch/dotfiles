@@ -5,7 +5,6 @@ export LANG='en_US.UTF-8'
 export TZ="America/Los_Angeles"
 export EDITOR="mate -wl1"
 export LESS="-RXfFi"
-export SVN=https://svn.pivotallabs.com/subversion
 export GIT_EDITOR=vim
 export INLINEDIR=~/.ruby_inline
 export CACHE=~/.rvm/gems/cache
@@ -44,21 +43,31 @@ function fx {
 }
 
 function drop {
+    pwd | grep "dev" && dest="$HOME/Dropbox/dev" || dest="$HOME/Dropbox/docs"
+
+    for x in $*; do
+      echo "Moving $x to $dest"
+      mv -n $x $dest || exit
+      ln -s "$dest/$x" .
+    done
+}
+
+function dot {
     active=$HOME/.bash_profile
     archive=$HOME/Dropbox/dotfiles/bash_profile
     from_file=$active
     to_file=$archive
-    diff -ub $to_file $from_file
     echo "Copying $from_file to $to_file"
+    diff -ub $to_file $from_file
     read -p "Are you sure? " -n 1
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
+      echo "Copying $from_file to $to_file"
       cp "$from_file" "$to_file"
     fi
 }
 
-# reload ~/.bash_profile with a mere "."
 function . {
     if [ "" = "$1" ]
         then
