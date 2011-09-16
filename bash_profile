@@ -36,7 +36,7 @@ alias rspec="bundle exec rspec"
 alias push="git push && git push heroku"
 alias s="git status"
 alias d="git diff"
-alias l="git log --oneline --decorate --graph"
+alias l="git log --oneline --decorate --graph --no-merges"
 
 # see also http://offbytwo.com/2011/06/26/things-you-didnt-know-about-xargs.html
 function fx {
