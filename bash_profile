@@ -35,8 +35,8 @@ alias rake="bundle exec rake"
 alias rspec="bundle exec rspec"
 alias push="git push && git push heroku"
 alias s="git status"
-alias d="git diff"
-alias l="git log --oneline --decorate --graph --no-merges"
+alias d="(echo 'Staged changes:' && git diff --staged --color=always && echo '' && echo 'Unstaged changes:' && git diff --color=always) | less"
+alias l="git log --graph --pretty='%Cred%h %Cgreen%ad%Creset%x09%s%x09%Creset%C(bold)%d' --date=short"
 
 # see also http://offbytwo.com/2011/06/26/things-you-didnt-know-about-xargs.html
 function fx {
