@@ -1,10 +1,22 @@
+# aliases for existing commands
+alias ls='gls --color=tty'
+alias cd..='cd ..'
+alias diff='diff -ub'
+alias rake="bundle exec rake"
+alias rspec="bundle exec rspec"
+
+# functions (and function-like aliases)
 alias get="curl -fsSLk"
+alias p="git pull origin master && git push origin master"
 alias push="git push && git push heroku"
 alias s="git status"
 alias d="(echo '=== Staged changes: ===' && git diff --staged --color=always && echo '' && echo '=== Unstaged changes: ===' && git diff --color=always) | less"
 alias l="git log --graph --pretty='%Cred%h %Cgreen%ad%Creset%x09%s%x09%Creset%C(bold)%d %an' --date=short"
+alias r="rake run"
 # rw = random word
 alias rw="ruby -e 'a=File.read(\"/usr/share/dict/words\").split; puts a[rand(a.length)];'"
+alias clojure='java -cp clojure.jar clojure.main'
+alias h="history"
 
 # see also http://offbytwo.com/2011/06/26/things-you-didnt-know-about-xargs.html
 function fx {
