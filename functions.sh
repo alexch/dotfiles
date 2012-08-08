@@ -4,6 +4,7 @@ alias cd..='cd ..'
 alias diff='diff -ub'
 alias rake="bundle exec rake"
 alias rspec="bundle exec rspec"
+alias guard="bundle exec guard"
 
 # functions (and function-like aliases)
 alias get="curl -fsSLk"
