@@ -3,7 +3,7 @@
 To use these settings
 
 * fork and clone this repo into your own home directory, i.e. `~/dotfiles`
-* then copy some or all of the contents of `dotfiles/bash_history` into your `~/.bash_history`
+* then copy some or all of the contents of `dotfiles/bash_profile` into your `~/.bash_profile`
 
 They're tailored for my personal setup on OS X (though lots of the settings should work for Linux as well).
 
