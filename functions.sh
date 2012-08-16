@@ -12,7 +12,7 @@ alias p="git pull origin master && git push origin master"
 alias push="git push && git push heroku"
 alias s="git status"
 alias d="(echo '=== Staged changes: ===' && git diff --staged --color=always && echo '' && echo '=== Unstaged changes: ===' && git diff --color=always) | less"
-alias l="git log --graph --pretty='%Cred%h %Cgreen%ad%Creset%x09%s%x09%Creset%C(bold)%d %an' --date=short"
+alias l="git log --graph --pretty='%Cred%h %Cgreen%ad%Creset%x09%s%x09%Creset%C(bold)%d %an' --date=short --no-merges"
 alias r="rake run"
 # rw = random word
 alias rw="ruby -e 'a=File.read(\"/usr/share/dict/words\").split; puts a[rand(a.length)];'"
@@ -51,11 +51,11 @@ function dot {
       from_file=$archive
       to_file=$active
     else
-      action="Comparing"    
+      action="Comparing"
       from_file=$archive
       to_file=$active
     fi
-    
+
     diff -ub $to_file $from_file | less -E
 
     if  [ "$1" == "save"  ] || [ "$1" == "load" ]; then
