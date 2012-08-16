@@ -1,6 +1,7 @@
 #!/bin/sh
 # see http://stackoverflow.com/questions/591923/make-git-automatically-remove-trailing-whitespace-before-committing/4597057#4597057
 # put this in .git/hooks/pre-commit or .../git-core/templates/hooks
+#  (... depends on where your git is installed... could be /usr/share or /usr/local/git/share or /opt/local/git/share or ...?)
 # run "git init" in your existing repos to get it in there
 
 if git-rev-parse --verify HEAD >/dev/null 2>&1 ; then
