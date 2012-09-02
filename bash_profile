@@ -17,7 +17,7 @@ export GIT_EDITOR=vim
 source $HOME/dotfiles/functions.sh
 
 # shell extensions
-source "$HOME/bin/git_completion.sh"
+source "$HOME/dotfiles/git_completion.sh"
 
 if [ -f /opt/local/etc/bash_completion ]; then
   . /opt/local/etc/bash_completion
@@ -31,3 +31,5 @@ source $HOME/dotfiles/prompt.sh
 
 # load RVM
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
+rvm use default
+
