@@ -4,6 +4,7 @@ alias cd..='cd ..'
 alias diff='diff -ub'
 alias rake="bundle exec rake"
 alias rspec="bundle exec rspec"
+alias spork="bundle exec spork"
 alias guard="bundle exec guard"
 
 # functions (and function-like aliases)
@@ -86,7 +87,8 @@ function . {
 }
 
 function which_ruby {
-	echo $GEM_HOME | sed -e 's/.*\///'
+	# echo $GEM_HOME | sed -e 's/.*\///'
+	ruby --version | cut -f 1-2 -d ' '
 }
 
 function whats-on-port {
