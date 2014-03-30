@@ -1,5 +1,5 @@
 # aliases for existing commands
-alias ls='gls --color=tty'
+alias ls='ls -Gp'  # http://apple.stackexchange.com/a/33678
 alias cd..='cd ..'
 alias diff='diff -ub'
 alias rake="bundle exec rake"
