@@ -2,10 +2,12 @@
 alias ls='ls -Gp'  # http://apple.stackexchange.com/a/33678
 alias cd..='cd ..'
 alias diff='diff -ub'
-alias rake="bundle exec rake"
+alias be="bundle exec"
+alias rake="bundle exec rake"    # if this messes up, do `unalias rake` and try again
 alias rspec="bundle exec rspec"
 alias spork="bundle exec spork"
 alias guard="bundle exec guard"
+# alias locate=mdfind  # on Mac OS X only -- mdfind is command-line Spotlight search
 
 # functions (and function-like aliases)
 alias get="curl -fsSLk"
