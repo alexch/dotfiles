@@ -22,6 +22,7 @@ alias rw="ruby -e 'a=File.read(\"/usr/share/dict/words\").split; puts a[rand(a.l
 alias clojure='java -cp clojure.jar clojure.main'
 alias h="history"
 
+
 # see also http://offbytwo.com/2011/06/26/things-you-didnt-know-about-xargs.html
 function fx {
   dir=.
@@ -97,3 +98,15 @@ function whats-on-port {
   lsof -i TCP:$1
 }
 
+function thisBranch {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
+
+function blam() {
+ git push origin $(thisBranch)
+}
+
+function kablam() {
+ git push -f origin $(thisBranch)
+}
