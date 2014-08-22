@@ -104,9 +104,13 @@ function thisBranch {
 
 
 function blam() {
- git push origin $(thisBranch)
+  git push origin $(thisBranch)
 }
 
 function kablam() {
- git push -f origin $(thisBranch)
+  git push -f origin $(thisBranch)
 }
+function dash {
+  ruby -e "puts gets.chomp.downcase.gsub(/\s+/,'-').gsub(/[^\w-]/, '')"
+}
+
