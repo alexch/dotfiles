@@ -8,6 +8,7 @@ alias rspec="bundle exec rspec"
 alias spork="bundle exec spork"
 alias guard="bundle exec guard"
 # alias locate=mdfind  # on Mac OS X only -- mdfind is command-line Spotlight search
+alias ss="spring stop"
 
 # functions (and function-like aliases)
 alias get="curl -fsSLk"
@@ -114,3 +115,10 @@ function dash {
   ruby -e "puts gets.chomp.downcase.gsub(/\s+/,'-').gsub(/[^\w-]/, '')"
 }
 
+function b() {
+  token=`cat $HOME/.tracker`
+  story_id=$1
+  curl --silent -X GET -H "X-TrackerToken: $token" "https://www.pivotaltracker.com/services/v5/stories/${story_id}" | \
+    ruby -rjson -e "story=JSON.parse(STDIN.read); \
+    puts story['story_type'] + '/' + story['name'].chomp.downcase.gsub(/[\s\.]+/,'-').gsub(/[^\w-]/, '') + '-${story_id}'"
+}
