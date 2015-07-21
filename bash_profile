@@ -10,7 +10,7 @@ export TODO_FILE=~/docs/todo/todo.txt
 
 # more general settings
 export EDITOR="mate -wl1"
-export LESS="-RXfFi"
+export LESS="-RXfFin"
 export GIT_EDITOR=vim
 
 # functions and aliases
