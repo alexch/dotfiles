@@ -9,20 +9,23 @@ alias spork="bundle exec spork"
 alias guard="bundle exec guard"
 # alias locate=mdfind  # on Mac OS X only -- mdfind is command-line Spotlight search
 alias ss="spring stop"
+alias r="bin/rails"
 
-# functions (and function-like aliases)
+# git aliases
 alias get="curl -fsSLk"
-alias p="git pull origin master && git push origin master"
-alias push="git push && git push heroku"
+alias p="git pull"
 alias s="git status"
+alias pp="git pull && git push origin HEAD"
+alias push="git push origin HEAD"
 alias d="(echo '=== Staged changes: ===' && git diff --staged --color=always && echo '' && echo '=== Unstaged changes: ===' && git diff --color=always) | less"
 alias l="git log --graph --pretty='%Cred%h %Cgreen%ad%Creset%x09%s%x09%Creset%C(bold)%d %an' --date=short"
-alias r="(bundle check || bundle install) && bundle exec rake run"
+
+# functions (and function-like aliases)
+alias run="(bundle check || bundle install) && (bin/run || bundle exec rake run)"
 # rw = random word
 alias rw="ruby -e 'a=File.read(\"/usr/share/dict/words\").split; puts a[rand(a.length)];'"
 alias clojure='java -cp clojure.jar clojure.main'
 alias h="history"
-
 
 # see also http://offbytwo.com/2011/06/26/things-you-didnt-know-about-xargs.html
 function fx {
