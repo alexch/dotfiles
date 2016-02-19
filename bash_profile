@@ -10,7 +10,7 @@ export TODO_FILE=~/docs/todo/todo.txt
 
 # more general settings
 export EDITOR="mate -wl1"
-export LESS="-RXfFi"
+export LESS="-RXfFin"
 export GIT_EDITOR=vim
 
 # functions and aliases
@@ -25,7 +25,7 @@ fi
 [ -f ~/.git-bash-completion.sh ] && . ~/.git-bash-completion.sh
 
 # disable .bash_history
-unset HISTFILE
+# unset HISTFILE
 
 source $HOME/dotfiles/prompt.sh
 
