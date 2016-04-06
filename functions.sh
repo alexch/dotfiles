@@ -36,8 +36,6 @@ alias clear-dropbox-cache="rm -r ~/Dropbox/.dropbox.cache/*"
 
 function pgfix {
   tail -2 /usr/local/var/postgres/server.log | grep 'Is another postmaster' && rm /usr/local/var/postgres/postmaster.pid || (  launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist; launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist )
-
-
 }
 
 # see also http://offbytwo.com/2011/06/26/things-you-didnt-know-about-xargs.html
