@@ -209,3 +209,11 @@ vagrant() {
         command vagrant "$@"
     fi
 }
+
+pup() {
+    . env/bin/activate
+    pip install --quiet --upgrade pip
+    pip install --quiet -r requirements.txt
+    pip uninstall -y faker fake-factory
+    pip install fake-factory
+}

@@ -27,6 +27,8 @@ fi
 # disable .bash_history
 # unset HISTFILE
 
+ssh-add
+
 source $HOME/dotfiles/prompt.sh
 
 # load RVM
