@@ -24,7 +24,7 @@ alias s="git status"
 alias pp="git pull && git push origin HEAD"
 alias push="git push origin HEAD"
 alias d="(echo '=== Staged changes: ===' && git diff --staged --color=always && echo '' && echo '=== Unstaged changes: ===' && git diff --color=always) | less"
-alias l="git log --graph --pretty='%Cred%h %Cgreen%ad%Creset%x09%s%x09%Creset%C(bold)%d %an' --date=short"
+alias l="git l"
 
 # functions (and function-like aliases)
 alias run="(bundle check || bundle install) && (bin/run || bundle exec rake run)"
